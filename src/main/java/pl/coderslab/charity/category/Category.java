@@ -1,10 +1,10 @@
 package pl.coderslab.charity.category;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import pl.coderslab.charity.donation.Donation;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Category {
@@ -30,4 +30,8 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+    @ManyToMany(mappedBy = "donationCategories")
+    private List<Donation> donations;
+
 }

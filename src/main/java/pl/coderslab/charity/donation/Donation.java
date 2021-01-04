@@ -23,11 +23,14 @@ public class Donation {
     LocalTime pickUpTime;
     String pickUpComment;
 
-    @OneToOne
+    @ManyToOne
     Institution institution;
 
-    @OneToMany
-    List<Category> categoryList;
+    @ManyToMany
+    @JoinTable(name="donation_category",
+            joinColumns=@JoinColumn(name = "dontation_id"),
+            inverseJoinColumns = @JoinColumn(name="category_id"))
+    List<Category> donationCategories;
 
     public Long getId() {
         return id;
@@ -101,11 +104,11 @@ public class Donation {
         this.institution = institution;
     }
 
-    public List<Category> getCategoryList() {
-        return categoryList;
+    public List<Category> getDonationCategorys() {
+        return donationCategories;
     }
 
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
+    public void setDonationCategorys(List<Category> donationCategorys) {
+        this.donationCategories = donationCategorys;
     }
 }
