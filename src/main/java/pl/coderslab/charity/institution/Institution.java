@@ -13,7 +13,7 @@ public class Institution {
     Long id;
 
     String name;
-    String decription;
+    String description;
 
     public Long getId() {
         return id;
@@ -32,10 +32,10 @@ public class Institution {
     }
 
     public String getDecription() {
-        return decription;
+        return description;
     }
 
     public void setDecription(String decription) {
-        this.decription = decription;
+        this.description = decription;
     }
 }
