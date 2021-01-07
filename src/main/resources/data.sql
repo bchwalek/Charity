@@ -5,6 +5,7 @@ INSERT INTO institution(name, description) VALUES ('Stowarzyszenie D', 'Zbieramy
 INSERT INTO institution(name, description) VALUES ('Stowarzyszenie E', 'Zbieramy Środki czystości');
 INSERT INTO institution(name, description) VALUES ('Stowarzyszenie F', 'Fundujemy obiadki');
 INSERT INTO institution(name, description) VALUES ('Stowarzyszenie G', 'Zbiórka żywności');
+INSERT INTO institution(name, description) VALUES ('Stowarzyszenie H ', 'Zbiórka');
 INSERT INTO category(name) VALUES ('Ciuchy');
 INSERT INTO category(name) VALUES ('Jedzenie');
 INSERT INTO category(name) VALUES ('Ksiązki');

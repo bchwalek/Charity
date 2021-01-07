@@ -71,20 +71,20 @@
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
           Możesz sprawdzić czym się zajmują.</p>
 
-        <ul class="help--slides-items" th:each="institution, stat: ${institutions}">
+        <ul class="help--slides-items" th:each="index, stat: ${#numbers.sequence(0, institutions.size()-2, 2)}">
           <li>
             <div class="col">
-              <div class="title" th:if="*{stat.odd}" th:text="${institution.name}"></div>
-              <div class="subtitle" th:if="*{stat.odd}" th:text="${institution.description}"></div>
+              <div class="title" th:text="${institutions.get(index).name}"></div>
+              <div class="subtitle" th:text="${institutions.get(index).description}"></div>
             </div>
-            <div class="col">
 
-              <div class="title" th:if="*{stat.even}" th:text="${institution.name}"></div>
-              <div class="subtitle" th:if="*{stat.even}" th:text="${institution.description}"></div>
+            <div class="col">
+              <div class="title" th:text="${institutions.get(index+1).name}"></div>
+              <div class="subtitle" th:text="${institutions.get(index+1).description}"></div>
             </div>
+
           </li>
         </ul>
-
       </div>
 
     </section>
