@@ -1,5 +1,6 @@
 package pl.coderslab.charity.donation;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
 
@@ -13,24 +14,27 @@ public class Donation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    Integer quantity;
-    String street;
-    String city;
-    String zipCode;
-    LocalDate pickUpDate;
-    LocalTime pickUpTime;
-    String pickUpComment;
+    private Integer quantity;
+    private String street;
+    private String city;
+    private String zipCode;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate pickUpDate;
+    private LocalTime pickUpTime;
+    private String pickUpComment;
+    private String phone;
 
     @ManyToOne
-    Institution institution;
+    private Institution institution;
 
     @ManyToMany
     @JoinTable(name="donation_category",
             joinColumns=@JoinColumn(name = "dontation_id"),
             inverseJoinColumns = @JoinColumn(name="category_id"))
-    List<Category> donationCategories;
+    private List<Category> donationCategories;
 
     public Long getId() {
         return id;
@@ -104,11 +108,18 @@ public class Donation {
         this.institution = institution;
     }
 
-    public List<Category> getDonationCategorys() {
+    public List<Category> getDonationCategories() {
         return donationCategories;
     }
 
-    public void setDonationCategorys(List<Category> donationCategorys) {
-        this.donationCategories = donationCategorys;
+    public void setDonationCategories(List<Category> donationCategories) {
+        this.donationCategories = donationCategories;
     }
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
 }

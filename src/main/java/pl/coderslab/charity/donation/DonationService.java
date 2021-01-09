@@ -18,4 +18,8 @@ public class DonationService {
     public Integer quantityDonation(){
         return donationRepository.donation();
     }
+
+    public Donation addDonation(Donation donation) {
+        return donationRepository.save(donation);
+    }
 }

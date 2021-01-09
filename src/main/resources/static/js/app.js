@@ -164,6 +164,38 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+      let categories = document.getElementById("categories").value;
+
+
+      let quantity = document.getElementById("quantity").value;
+      document.querySelector(".icon-bag").nextElementSibling.innerText="Ilość oddanych worków: " +quantity+" z kategorii: "+categories;
+
+
+      document.querySelector(".icon-hand").nextElementSibling.innerText=document.getElementById("institution").value;
+
+      let street = document.getElementById("street").value;
+      let city = document.getElementById("city").value;
+      let zipCode = document.getElementById("zipCode").value;
+      let phone = document.getElementById("phone").value;
+
+
+      const address = document.querySelector("#address");
+      address.firstElementChild.innerText=street;
+      address.firstElementChild.nextElementSibling.innerText=city;
+      address.lastElementChild.previousElementSibling.innerText=zipCode;
+      address.lastElementChild.innerText=phone;
+
+      let pickUpdate = document.getElementById("pickUpDate").value;
+      let pickUpTime = document.getElementById("pickUpTime").value;
+      let pickUpComment = document.getElementById("pickUpComment").value;
+
+      const date = document.querySelector('#date');
+      date.firstElementChild.innerText=pickUpdate;
+      date.firstElementChild.nextElementSibling.innerText=pickUpTime;
+      date.lastElementChild.innerText=pickUpComment;
+
+
+      // TODO: get data from inputs and show them in summary
     }
 
   }
