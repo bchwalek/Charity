@@ -9,4 +9,14 @@ import javax.transaction.Transactional;
 @Transactional
 @Service
 public class UserService {
+
+   private final UserRepository userRepository;
+
+   public void addUser(User user){
+      userRepository.save(user);
+   }
+
+   public User findByEmail(String email){
+       return userRepository.findByUserEmail(email);
+   }
 }

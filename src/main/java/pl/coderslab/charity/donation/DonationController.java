@@ -1,6 +1,7 @@
 package pl.coderslab.charity.donation;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,12 +20,12 @@ import java.util.List;
 @Controller
 public class DonationController {
 
-  private CategoryService categoryService;
-  private InstitutionService institutionService;
-  private DonationService donationService;
+  private final CategoryService categoryService;
+  private final InstitutionService institutionService;
+  private final DonationService donationService;
   List<Category> donationCategories;
 
-
+//    @Secured("ROLE_USER")
     @GetMapping("/donation")
     public String donationForm(Model model){
         model.addAttribute("donation", new Donation());

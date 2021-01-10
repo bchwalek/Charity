@@ -19,7 +19,7 @@ public class DonationService {
         return donationRepository.donation();
     }
 
-    public Donation addDonation(Donation donation) {
-        return donationRepository.save(donation);
+    public void addDonation(Donation donation) {
+        donationRepository.save(donation);
     }
 }
