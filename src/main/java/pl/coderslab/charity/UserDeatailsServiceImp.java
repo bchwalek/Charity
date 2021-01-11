@@ -11,7 +11,7 @@ import pl.coderslab.charity.user.UserService;
 @AllArgsConstructor
 public class UserDeatailsServiceImp implements UserDetailsService {
 
-    private UserService userService;
+    private final UserService userService;
 
 
 

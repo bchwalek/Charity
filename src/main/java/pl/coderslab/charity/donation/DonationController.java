@@ -25,7 +25,7 @@ public class DonationController {
   private final DonationService donationService;
   List<Category> donationCategories;
 
-//    @Secured("ROLE_USER")
+    @Secured("ROLE_USER")
     @GetMapping("/donation")
     public String donationForm(Model model){
         model.addAttribute("donation", new Donation());

@@ -17,4 +17,5 @@ INSERT INTO donation(city, quantity, institution_id) VALUES ('Katowice', '1', 5)
 INSERT INTO donation(city, quantity, institution_id) VALUES ('Katowice', '1', 5);
 INSERT INTO role(role) VALUES ('ROLE_ADMIN');
 INSERT INTO role(role) VALUES ('ROLE_USER');
-INSERT INTO user(password, user_email, user_name, role_id)  VALUES ('$2a$10$LYH84t82DvWDBeo/Bd/.eOEP2okYlC7DP340MAuSZIM4tHk7.g632', 'bart@bart.pl', 'Bartosz', '2')
+INSERT INTO user(password, user_email, user_name, role_id)  VALUES ('$2a$10$LYH84t82DvWDBeo/Bd/.eOEP2okYlC7DP340MAuSZIM4tHk7.g632', 'bart@bart.pl', 'Bartosz', '2');
+INSERT INTO user(password, user_email, user_name, role_id)  VALUES ('$2a$10$LYH84t82DvWDBeo/Bd/.eOEP2okYlC7DP340MAuSZIM4tHk7.g632', 'adamin@admin.pl', 'Tomasz', '1');
