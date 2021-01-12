@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-  <head th:insert="fragments :: head"> </head>
-  <body>
 
-     <header th:insert="fragments :: headerDonation"></header>
+<head th:insert="fragments :: head"></head>
+<body>
 
-     <section class="login-page">
-       <h2>Załóż konto</h2>
-       <form th:object="${institution}" th:action="@{/addinstitution}" th:method="post">
-         <div class="form-group">
-           <input type="text"  name="name" placeholder="Nazwa" th:field="*{name}" />
-         </div>
-         <div class="form-group">
-           <textarea type="text" name="description" placeholder="Profil Działalności" th:field="*{description}"></textarea>
-         </div>
+<header class="header--main-page">
+    <nav th:insert="fragments :: beforeLogin"></nav>
+    <div th:insert="fragments :: sloganStart"></div>
+</header>
 
-
-         <div class="form-group form-group--buttons">
-           <button class="btn" type="submit">Dodaj</button>
-         </div>
-       </form>
-     </section>
-
-    <footer th:insert="fragments :: footer"></footer>
-    <script th:insert="fragments :: script"></script>
+<section class="login-page">
+    <h2>Podaj dane organizacji:</h2>
+    <form th:object="${institution}" th:action="@{/addinstitution}" th:method="post">
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Nazwa" th:field="*{name}"/>
+        </div>
+        <div class="form-group">
+            <textarea type="text" name="description" placeholder="Profil Działalności"
+                      th:field="*{description}"></textarea>
+        </div>
 
 
-  </body>
+        <div class="form-group form-group--buttons">
+            <button class="btn" type="submit">Dodaj</button>
+        </div>
+    </form>
+</section>
+
+<footer th:insert="fragments :: footer"></footer>
+<script th:insert="fragments :: script"></script>
+
+
+</body>
 </html>

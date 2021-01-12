@@ -3,7 +3,10 @@
   <head th:insert="fragments :: head"> </head>
   <body>
 
-     <header th:insert="fragments :: headerDonation"></header>
+  <header class="header--main-page">
+    <nav th:insert="fragments :: afterLogin"></nav>
+    <div th:insert="fragments :: sloganDonationConfirm"></div>
+  </header>
 
 
     <footer th:insert="fragments :: footer"></footer>

@@ -16,38 +16,39 @@ public class InstitutionController {
     InstitutionService institutionService;
 
     @GetMapping("/institution")
-    public String institutionAll(Model model){
+    public String institutionAll(Model model) {
 
         model.addAttribute("institutionAll", institutionService.getAllInstitution());
         return "institutionCRUD";
     }
 
     @GetMapping("/addinstitution")
-    public String addInstitutionForm (Model model){
+    public String addInstitutionForm(Model model) {
         model.addAttribute("institution", new Institution());
         return "institutionCRUD-Create";
     }
 
     @PostMapping("/addinstitution")
-    public String addInstitution (Institution institution){
+    public String addInstitution(Institution institution) {
         institutionService.addInstitution(institution);
         return "redirect:/institution";
     }
 
     @GetMapping("updateinstitution/{id}")
-    public String updateInstitutionForm (Model model, @PathVariable Long id){
+    public String updateInstitutionForm(Model model, @PathVariable Long id) {
         model.addAttribute("institutionUpdate", institutionService.getInstitution(id).get());
 
         return "institutionCRUD-Update";
     }
+
     @PostMapping("/updateinstitution")
-    public String updateInstitution (Institution institution){
+    public String updateInstitution(Institution institution) {
         institutionService.addInstitution(institution);
         return "redirect:/institution";
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteInstitution (@PathVariable Long id){
+    public String deleteInstitution(@PathVariable Long id) {
 
         institutionService.deleteInstitution(id);
         return "redirect:/institution";

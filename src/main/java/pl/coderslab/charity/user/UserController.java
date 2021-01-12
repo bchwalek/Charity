@@ -30,12 +30,19 @@ public class UserController {
     public String userRegister(Model model, User user, @ModelAttribute("password2") String password2, BindingResult bindingResult){
         if(!user.getPassword().equals(password2)){
             model.addAttribute("message", "Hasła nie są identyczne");
-            return "register-form";
+            return "redirect:/login";
         }
 
         user.setRole(roleService.getRoleByName("ROLE_USER"));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.addUser(user);
         return "register-form";
+    }
+
+    @GetMapping("/userslist")
+    public String getAllAdmin(Model model){
+           model.addAttribute("adminList", userService.getUserByRole(roleService.getRoleByName("ROLE_ADMIN")));
+           model.addAttribute("userList", userService.getUserByRole(roleService.getRoleByName("ROLE_ADMIN")));
+        return "redirect:/";
     }
 }

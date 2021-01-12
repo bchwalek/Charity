@@ -33,7 +33,6 @@ public class HomeController {
 
     @PostMapping("/login")
     public String login(@AuthenticationPrincipal User user){
-        System.out.println(user.getRole().getRole());
         if(user.getRole().getRole().equals("ROLE_ADMIN")){
             return "redirect:/institution";
         } return "redirect:/";
